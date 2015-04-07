@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7525" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ctv-xR-MeX">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Secret Transfer-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DataTransfer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xkh-5s-2ve">
+                                <rect key="frame" x="16" y="150" width="568" height="300"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="AyT-zC-Mvn" appends="YES" id="xFn-jl-rwz"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xkh-5s-2ve" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DDP-8f-ocs"/>
+                            <constraint firstItem="xkh-5s-2ve" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="J1w-TW-jsX"/>
+                            <constraint firstItem="xkh-5s-2ve" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LRz-PY-zI5"/>
+                            <constraint firstItem="xkh-5s-2ve" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="86" id="Ote-5e-klO"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Process" id="qW5-Hv-ZiO">
+                            <connections>
+                                <action selector="processBtnClicked:" destination="BYZ-38-t0r" id="F5C-ky-bQU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="PHJ-tz-AKQ"/>
+                        <barButtonItem enabled="NO" title="Status" id="LoR-Kz-4wg"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ufN-q2-LRj"/>
+                        <barButtonItem title="Upload" id="gqI-f8-7ig">
+                            <connections>
+                                <action selector="uploadBtnClicked:" destination="BYZ-38-t0r" id="bSb-4I-ocm"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Secret Transfer" id="o2d-pe-MvG"/>
+                    <connections>
+                        <outlet property="imageView" destination="xkh-5s-2ve" id="scg-bH-AK3"/>
+                        <outlet property="processBtn" destination="qW5-Hv-ZiO" id="g0o-vA-e66"/>
+                        <outlet property="statusBtn" destination="LoR-Kz-4wg" id="wQs-BM-pKX"/>
+                        <outlet property="uploadBtn" destination="gqI-f8-7ig" id="kaj-Ut-8XO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AyT-zC-Mvn">
+                    <connections>
+                        <action selector="imageViewTapped:" destination="BYZ-38-t0r" id="DgC-ud-19F"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1023" y="623"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ysG-3h-4Zp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Ctv-xR-MeX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V70-aW-L0L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="01W-3E-fbS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ptC-Lz-qwg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Wt-n6-FTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="1010"/>
+        </scene>
+    </scenes>
+</document>
